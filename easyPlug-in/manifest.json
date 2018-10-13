@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "fjy-wipeImg",
+  "description": "去除网页img",
+  "version": "1.0",
+
+  "browser_action": {
+//  "default_icon": "icon.png",
+//  "default_popup": "popup.html"
+  },
+  // 网页许可
+  "permissions": [
+  	"http://*/*", // 可以通过executeScript或者insertCSS访问的网站
+    "https://*/*" // 可以通过executeScript或者insertCSS访问的网站
+  ],
+  // 直接在这里配置js文件
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["jquery-3-3.1.js", "content_action.js"]
+  }]
+  
+}
